@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import img1 from '../../../image/carousal/img1.jpg';
 import img2 from '../../../image/carousal/img2.jpg';
 import img3 from '../../../image/carousal/img3.jpg';
+import HomeInventory from '../HomeInventory/HomeInventory';
 
 const Home = () => {
+    const [products, setProducts] = useState([]);
+    useEffect( () => {
+        fetch('http://localhost:5000/products')
+        .then(res => res.json())
+        .then(data => setProducts(data))
+    }, [])
     return (
         <div>
-            <h2>This is Home page</h2>
             {/* carousal  */}
             <Carousel variant="dark">
                 <Carousel.Item>
@@ -41,6 +47,15 @@ const Home = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
+            <h2 className='bg-primary my-5 py-3'>Inventory</h2>
+            <div className="mobileGrid">
+                {
+                    products.slice(0,6).map(product => <HomeInventory
+                        key={product._id}
+                        product = {product}
+                    ></HomeInventory>)
+                }
+            </div>
         </div>
     );
 };

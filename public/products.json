@@ -2,6 +2,8 @@
     {   "_id": 1,
         "name": "Samsung 13 Pro Max",
         "price": "2000",
+        "supplier": "Samsung",
+        "quantity": 5,
         "description": "This is Samsung phone. Samsung phone 13 pro max",
         "img": "https://i.ibb.co/NmbSqQ6/img1.webp"
     },
@@ -9,6 +11,8 @@
         "_id": 2,
         "name": "Iphone 12",
         "price": "1500",
+        "supplier": "Apple",
+        "quantity": 5,
         "description": "Apple Phone is the most precious phone in the world",
         "img": "https://i.ibb.co/GJp0pyT/img2.webp"
     },
@@ -16,6 +20,8 @@
         "_id": 3,
         "name": "Motorola 130",
         "price": "1000",
+        "supplier": "Motorwala",
+        "quantity": 2,
         "description": "Motorolla phone for motorola user",
         "img": "https://i.ibb.co/ngpCjrX/img3.webp"
     },
@@ -23,6 +29,8 @@
         "_id": 4,
         "name": "Samsung S15",
         "price": "1300",
+        "supplier": "Samsung",
+        "quantity": 4,
         "description": "Samsung S15 is the greatest phone of the time",
         "img": "https://i.ibb.co/d4VCBM1/img4.webp"
     },
@@ -30,6 +38,8 @@
         "_id": 5,
         "name": "Glass Mobile",
         "price": "3000",
+        "supplier": "Apple",
+        "quantity": 5,
         "description": "This is the glass phone. Whole body is the glass cover",
         "img": "https://i.ibb.co/b60bYh4/img5.webp"
     },
@@ -37,6 +47,8 @@
         "_id": 6,
         "name": "Samsung J7",
         "price": "700",
+        "supplier": "Samsung",
+        "quantity": 7,
         "description": "Samsung mobile for smart user",
         "img": "https://i.ibb.co/DKqV3Zq/img6.webp"
     },
@@ -44,6 +56,8 @@
         "_id": 7,
         "name": "Iphone 13 max pro",
         "price": "3000",
+        "supplier": "Apple",
+        "quantity": 5,
         "description": "Iphone for apple user",
         "img": "https://i.ibb.co/hBn1Pj9/img7.webp"
     },
@@ -51,6 +65,8 @@
         "_id": 8,
         "name": "Apple Smart Phone",
         "price": "2000",
+        "supplier": "Apple",
+        "quantity": 3,
         "description": "Iphone for apple user",
         "img": "https://i.ibb.co/Nm7qgQP/img8.webp"
     },
@@ -58,6 +74,8 @@
         "_id": 9,
         "name": "Redmi Note 8pro",
         "price": "1500",
+        "supplier": "Xiaomi",
+        "quantity": 4,
         "description": "Redmi phone MI brand",
         "img": "https://i.ibb.co/WsnbtS1/img9.webp"
     },
@@ -65,6 +83,8 @@
         "_id": 10,
         "name": "Vivo Phone plus",
         "price": "900",
+        "supplier": "Vivo Company",
+        "quantity": 7,
         "description": "vivo phone sobar phone",
         "img": "https://i.ibb.co/y6QQj04/img10.webp"
     },
@@ -72,6 +92,8 @@
         "_id": 11,
         "name": "OPPO",
         "price": "1000",
+        "supplier": "Oppo Brand",
+        "quantity": 9,
         "description": "Oppo mobile camera phone photo",
         "img": "https://i.ibb.co/MpFn00L/img11.jpg"
     }

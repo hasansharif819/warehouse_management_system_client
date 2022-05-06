@@ -1,0 +1,24 @@
+.footerClass{
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 5px;
+}
+.name{
+    width: 20%;
+}
+.contact{
+    width: 20%;
+}
+.info{
+    width: 20%;
+}
+.account{
+    width: 20%;
+}
+.company{
+    width: 20%;
+}
