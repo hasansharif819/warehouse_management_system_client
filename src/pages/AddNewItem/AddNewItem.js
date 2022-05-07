@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import PageTitle from '../shared/PageTitle/PageTitle';
 
 const AddNewItem = () => {
     const { register, handleSubmit } = useForm();
@@ -23,6 +24,7 @@ const AddNewItem = () => {
 
     return (
         <div className='w-50 mx-auto'>
+            <PageTitle title="add new item"></PageTitle>
             <h2>Please Add New Inventory Item</h2>
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
                 <input className='mb-2' placeholder='Inventory Name' {...register("name", { required: true, maxLength: 20 })} />

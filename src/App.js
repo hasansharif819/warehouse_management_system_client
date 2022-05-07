@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Header from './pages/shared/Header/Header';
 import Footer from './pages/shared/Footer/Footer';
 import Home from './pages/shared/Home/Home';
-import Inventory  from './pages/Inventory/Inventory';
+import Inventory from './pages/Inventory/Inventory';
 import InventoryDetails from './pages/InventoryDetails/InventoryDetails';
 import Inventories from './pages/Inventories/Inventories';
 import ManageInventory from './pages/ManageInventory/ManageInventory';
@@ -15,6 +15,8 @@ import Login from './pages/Login/Login/Login';
 import Signup from './pages/Login/Signup/Signup';
 import MyItem from './pages/MyItem/MyItem';
 import { ToastContainer } from 'react-toastify';
+import About from './pages/About/About';
+import RequireAuth from './pages/Login/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -31,9 +33,18 @@ function App() {
 
         <Route path='/inventory/:id' element={<InventoryDetails></InventoryDetails>}></Route>
 
-        <Route path='/addNewItem' element={<AddNewItem></AddNewItem>}></Route>
+        <Route path='/about' element={<About></About>}></Route>
 
-        <Route path='/myitem' element={<MyItem></MyItem>}></Route>
+        <Route path='/addNewItem' element={
+          <RequireAuth>
+            <AddNewItem></AddNewItem>
+          </RequireAuth>
+        }></Route>
+
+        <Route path='/myitem' element={
+        <RequireAuth>
+            <MyItem></MyItem>
+        </RequireAuth>}></Route>
 
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>

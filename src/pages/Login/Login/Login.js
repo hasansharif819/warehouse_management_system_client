@@ -5,6 +5,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import PageTitle from '../../shared/PageTitle/PageTitle';
 import Loading from '../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
@@ -70,6 +71,7 @@ const Login = () => {
     return (
         <div className='container w-50 mx-auto'>
             <h2 className='text-primary text-center mt-2'>Sign in Please</h2>
+            <PageTitle title="Signin"></PageTitle>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control ref={emailRef} type="email" placeholder="Enter your email" required />
