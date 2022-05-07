@@ -1,0 +1,23 @@
+h1{
+    color: bisque;
+    background-color: coral;
+    font-size: larger;
+    font-weight: 900;
+    font-style: italic;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+}
+.js{
+    background-color: hotpink;
+}
+.mongo{
+    background-color: goldenrod;
+}
+.nosql{
+    background-color: burlywood;
+}
+.jwt{
+    background-color: aquamarine;
+}
