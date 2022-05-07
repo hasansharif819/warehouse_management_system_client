@@ -11,6 +11,9 @@ import ManageInventory from './pages/ManageInventory/ManageInventory';
 import AddNewItem from './pages/AddNewItem/AddNewItem';
 import Blogs from './pages/Blogs/Blogs';
 import NotFound from './pages/shared/NotFound/NotFound';
+import Login from './pages/Login/Login/Login';
+import Signup from './pages/Login/Signup/Signup';
+import MyItem from './pages/MyItem/MyItem';
 
 function App() {
   return (
@@ -28,6 +31,11 @@ function App() {
         <Route path='/inventory/:id' element={<InventoryDetails></InventoryDetails>}></Route>
 
         <Route path='/addNewItem' element={<AddNewItem></AddNewItem>}></Route>
+
+        <Route path='/myitem' element={<MyItem></MyItem>}></Route>
+
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/signup' element={<Signup></Signup>}></Route>
 
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
