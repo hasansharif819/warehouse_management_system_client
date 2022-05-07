@@ -8,6 +8,7 @@ import Inventory  from './pages/Inventory/Inventory';
 import InventoryDetails from './pages/InventoryDetails/InventoryDetails';
 import Inventories from './pages/Inventories/Inventories';
 import ManageInventory from './pages/ManageInventory/ManageInventory';
+import AddNewItem from './pages/AddNewItem/AddNewItem';
 
 function App() {
   return (
@@ -18,8 +19,12 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/inventories' element={<Inventories></Inventories>}></Route>
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>
+
         <Route path='/manageInventories' element={<ManageInventory></ManageInventory>}></Route>
+
         <Route path='/inventory/:id' element={<InventoryDetails></InventoryDetails>}></Route>
+
+        <Route path='/addNewItem' element={<AddNewItem></AddNewItem>}></Route>
 
       </Routes>
       <Footer></Footer>
