@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
+import useInventory from '../../../hooks/useInventory';
 import img1 from '../../../image/carousal/img1.jpg';
 import img2 from '../../../image/carousal/img2.jpg';
 import img3 from '../../../image/carousal/img3.jpg';
 import HomeInventory from '../HomeInventory/HomeInventory';
+import './Home.css';
 
 const Home = () => {
-    const [products, setProducts] = useState([]);
-    useEffect( () => {
-        fetch('http://localhost:5000/products')
-        .then(res => res.json())
-        .then(data => setProducts(data))
-    }, [])
+    const [inventories, setInventories] = useInventory();
+    // useEffect( () => {
+    //     fetch('http://localhost:5000/products')
+    //     .then(res => res.json())
+    //     .then(data => setProducts(data))
+    // }, [])
     return (
         <div>
             {/* carousal  */}
@@ -50,9 +52,9 @@ const Home = () => {
             <h2 className='bg-primary my-5 py-3'>Inventory</h2>
             <div className="mobileGrid">
                 {
-                    products.slice(0,6).map(product => <HomeInventory
-                        key={product._id}
-                        product = {product}
+                    inventories.slice(0,6).map(inventory => <HomeInventory
+                        key={inventory._id}
+                        inventory = {inventory}
                     ></HomeInventory>)
                 }
             </div>

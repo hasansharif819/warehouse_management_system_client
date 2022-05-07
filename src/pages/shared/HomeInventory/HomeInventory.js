@@ -1,12 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './HomeInventory.css';
 
-const HomeInventory = ({product}) => {
-    // const [img, name] = {product};
+const HomeInventory = ({inventory}) => {
+    const {img, name, price} = inventory;
     return (
-        <div className='mobile'>
-            <img width={300} height={300} src={product.img} alt="" />
-            <h4>{product.name}</h4>
-            <button className='btn btn-primary p-2 mb-3'>Update</button>
+        <div className='mobile-home'>
+            <img width={300} height={300} src={img} alt="" />
+            <h4>{name}</h4>
+            <p>Price: {price}</p>
+            <Link to='/inventories'>
+                <button className='btn btn-primary'>Details</button>
+            </Link>
         </div>
     );
 };
