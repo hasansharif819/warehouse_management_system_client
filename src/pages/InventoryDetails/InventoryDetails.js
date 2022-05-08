@@ -34,8 +34,8 @@ const InventoryDetails = () => {
             <h2>Hello inventory: {inventoryDetails.name}</h2>
             <form onSubmit={handleDelevered}>
                 <input className='w-100 mb-2' type="text" name='name' placeholder='name' required />
-                <input className='w-100 mb-2' type="email" value={user.email} name='email' placeholder='email' readOnly required />
-                <input className='w-100 mb-2' type="text" value={inventoryDetails.name} name='inventoryName' placeholder='inventoryName' readOnly required />
+                <input className='w-100 mb-2' type="email" value={user?.email} name='email' placeholder='email' readOnly disabled required />
+                <input className='w-100 mb-2' type="text" value={inventoryDetails.name} name='inventoryName' placeholder='inventoryName' readOnly disabled required />
                 <input className='w-100 mb-2' type="text" name='address' placeholder='address' required />
                 <input className='w-100 mb-2' type="text" name='phone' placeholder='phone' required />
                 <input type="submit" value="Delevered" />
