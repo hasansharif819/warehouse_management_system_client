@@ -31,7 +31,7 @@ function App() {
 
         <Route path='/manageInventories' element={<ManageInventory></ManageInventory>}></Route>
 
-        <Route path='/inventory/:id' element={<InventoryDetails></InventoryDetails>}></Route>
+        <Route path='/inventories/:inventoriesId' element={<InventoryDetails></InventoryDetails>}></Route>
 
         <Route path='/about' element={<About></About>}></Route>
 

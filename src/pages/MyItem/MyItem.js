@@ -14,21 +14,23 @@ const MyItem = () => {
         const getItems = async() => {
             const email = user.email;
             const url = `http://localhost:5000/myitem?email=${email}`;
-            try{
-                const {data} = await axios.get(url, {
-                    headers: {
-                        authorization: `bearer ${localStorage.getItem('accessToken')}`
-                    }
-                });
-                    setItems(data);
-            }
-            catch(error){
-                if(error.response.status === 401 || 403){
-                    signOut(auth);
-                    navigate('/login');
-                }
+            const {data} = await axios.get(url)
+            setItems(data);
+        //     try{
+        //         const {data} = await axios.get(url, {
+        //             headers: {
+        //                 authorization: `bearer ${localStorage.getItem('accessToken')}`
+        //             }
+        //         });
+        //             setItems(data);
+        //     }
+        //     catch(error){
+        //         if(error.response.status === 401 || 403){
+        //             signOut(auth);
+        //             navigate('/login');
+        //         }
 
-            }
+        //     }
         }
         getItems();
     }, [user])
