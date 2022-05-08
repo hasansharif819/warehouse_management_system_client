@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Items from '../Items/Items';
+import ManageInventorySingle from '../ManageInventorySingle/ManageInventorySingle';
 
 const MyItem = () => {
     const [items, setItems] = useState([]);
@@ -35,6 +36,8 @@ const MyItem = () => {
         }
         getItems();
     }, [user])
+
+    
     return (
         <div>
             <h2>My Item: {items.length}</h2>
@@ -44,6 +47,7 @@ const MyItem = () => {
                         key={item._id}
                         item = {item}
                     ></Items>)
+                    
                 }
             </div>
         </div>
