@@ -53,8 +53,12 @@ const Login = () => {
         console.log(data.accessToken);
     }
 
-    const navigateRegister = event => {
-        navigate('/register');
+    // const navigateSignup = () => {
+    //     navigate('/signup');
+    // }
+
+    const navigateSignup = () => {
+        navigate('/signup');
     }
 
     const resetPassword = async () => {
@@ -84,7 +88,7 @@ const Login = () => {
                 </Button>
             </Form>
             {errorElement}
-            <p><Link to="/register" className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Create a new account</Link> </p>
+            <p><Link to="/signup" className='text-primary pe-auto text-decoration-none' onClick={navigateSignup}>Create a new account</Link> </p>
             <p>Forget Password <button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
             <SocialLogin></SocialLogin>
             
