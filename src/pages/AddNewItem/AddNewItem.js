@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify';
 import PageTitle from '../shared/PageTitle/PageTitle';
 
 const AddNewItem = () => {
     const { register, handleSubmit } = useForm();
-    const [forms, setForms] = useState('');
-
 
     const onSubmit = data => {
         fetch('http://localhost:5000/inventory', {
@@ -18,8 +17,11 @@ const AddNewItem = () => {
             .then(response => response.json())
             .then(result => {
                 console.log('Success:', result);
-            })
-            setForms('');
+            });
+            if(data.insertedId){
+                toast('Successfully Addeded your item');
+                data.target.reset();
+            }
     };
 
     return (
