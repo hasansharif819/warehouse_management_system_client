@@ -13,7 +13,7 @@ const MyItem = () => {
     useEffect( () => {
         const getItems = async() => {
             const email = user.email;
-            const url = ``;
+            const url = `http://localhost:5000/myitem?email=${email}`;
             try{
                 const {data} = await axios.get(url, {
                     headers: {
