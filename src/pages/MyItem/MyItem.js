@@ -2,15 +2,23 @@ import axios from 'axios';
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Items from '../Items/Items';
-import ManageInventorySingle from '../ManageInventorySingle/ManageInventorySingle';
 
 const MyItem = () => {
+    // const {inventoryId} = useParams();
+    // const [myItem, setMyItem] = useState([]);
     const [items, setItems] = useState([]);
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
+
+    // useEffect( () => {
+    //     const url = `http://localhost:5000/inventory/${inventoryId}`
+    //     fetch(url)
+    //     .then(res => res.json())
+    //     .then(data => setMyItem(data))
+    // }, [])
     
     useEffect( () => {
         const getItems = async() => {

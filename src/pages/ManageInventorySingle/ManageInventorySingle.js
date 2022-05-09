@@ -8,7 +8,7 @@ const ManageInventorySingle = ({inventory, handleDelete}) => {
             <div>
                 <h5>{name}</h5>
                 <p>Price: ${price}</p>
-                <p>Quantity: {}quantity</p>
+                <p>Quantity: {quantity}</p>
                 <p>Supplier: {supplier}</p>
                 <p>Description: {description}</p>
             </div>

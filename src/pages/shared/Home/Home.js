@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useInventory from '../../../hooks/useInventory';
 import img1 from '../../../image/carousal/img1.jpg';
 import img2 from '../../../image/carousal/img2.jpg';
@@ -58,6 +59,10 @@ const Home = () => {
                     ></HomeInventory>)
                 }
             </div>
+            <br />
+            <Link to='/manageinventories'>
+                <button className='btn btn-primary'>Manage Inventories</button>
+            </Link>
         </div>
     );
 };

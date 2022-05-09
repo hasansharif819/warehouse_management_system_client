@@ -6,7 +6,6 @@ import ManageInventorySingle from '../ManageInventorySingle/ManageInventorySingl
 const ManageInventory = () => {
     const [inventories, setInventories] = useInventory();
     const handleDelete = id => {
-        // console.log('clicked')
         const proceed = window.confirm('Are you sure');
         if (proceed) {
             const url = `http://localhost:5000/inventory/${id}`;
@@ -15,12 +14,10 @@ const ManageInventory = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     const remaining = inventories.filter(inventory => inventory._id !== id);
                     setInventories(remaining);
                 })
         }
-
     }
 
     return (
@@ -30,7 +27,7 @@ const ManageInventory = () => {
                     <button className='btn btn-primary'>Add New Item</button>
                 </Link>
             </h2>
-            <div>
+            <div className='mobileGrid'>
                 {
                     inventories.map(inventory => <ManageInventorySingle
                         key={inventory._id}

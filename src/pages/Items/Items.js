@@ -1,20 +1,41 @@
-import React from 'react';
-import useInventory from '../../hooks/useInventory';
+import React, { useState } from 'react';
 import './Items.css';
 
-const Items = ({item, handleDelete}) => {
-    console.log(item.name)
-    const {_id, name, img, quantity, supplier, price, description} = item;
+const Items = ({ item }) => {
+    //------------------Delete Button Start--------
+    const [products, setProducts] = useState([]);
+
+    const handleUserDelete = id => {
+        const proceed = window.confirm('Are you sure you want to delete?');
+        if (proceed) {
+            console.log('deleting user with id, ', item._id);
+            const url = `http://localhost:5000/myitem/${item._id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        const remaining = products.filter(product => products._id !== id);
+                        setProducts(remaining);
+                    }
+                })
+        }
+    }
+
+    //-------------------Delete button end----------
 
     return (
         <div className='mobile'>
-            <img width={300} height={300} src={item._id.img} alt="" />
             <div>
-            <h4>Name: {item.name}</h4>
-            <p>Price: ${item.price}</p>
+                <h4>Name: {item.inventory}</h4>
+                <p>Email: {item.email}</p>
+                <p>Address: {item.address}</p>
+                <p>Phone: {item.phone}</p>
+                <p>{item._id}</p>
             </div>
             <div>
-                <button onClick={() => handleDelete(_id)} className='btn btn-danger'>Delete</button>
+                <button onClick={() => handleUserDelete(item._id)} className='btn btn-danger'>Delete</button>
             </div>
         </div>
     );
