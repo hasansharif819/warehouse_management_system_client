@@ -1,0 +1,20 @@
+.itemClass{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid goldenrod;
+    background-color: bisque;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+}
+.image img{
+    height: 300px;
+    width: 300px;
+}
+.buttonClass{
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    align-items: center;
+}

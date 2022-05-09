@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 
-const useInventoryDetails = inventoriesId => {
-    const [inventoryDetails, setInventoryDetails] = useState({});
+const useInventoryDetails = inventoryId => {
+    const [inventoryDetail, setInventoryDetail] = useState({});
     useEffect( () => {
-        const url = `http://localhost:5000/inventory/${inventoriesId}`;
+        const url = `http://localhost:5000/inventoryDetails/${inventoryId}`;
         fetch(url)
         .then(res => res.json())
-        .then(data => setInventoryDetails(data))
+        .then(data => setInventoryDetail(data))
 
-    }, [inventoriesId])
-    return [inventoryDetails];
+    }, [inventoryId])
+    return [inventoryDetail];
 }
 
 export default useInventoryDetails;

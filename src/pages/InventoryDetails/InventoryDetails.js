@@ -1,21 +1,28 @@
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
-import useInventoryDetails from '../../hooks/useInventoryDetails';
 
 const InventoryDetails = () => {
+    const { inventoryId } = useParams();
     const [user] = useAuthState(auth);
-    const {inventoriesId} = useParams();
-    const [inventoryDetails] = useInventoryDetails(inventoriesId);
+
+    const [delevery, setDelevery] = useState([]);
+    useEffect( () => {
+        const url = `http://localhost:5000/inventory/${inventoryId}`;
+        fetch(url)
+        .then(res => res.json())
+        .then(data => setDelevery(data))
+    }, [])
 
     const handleDelevered = event => {
         event.preventDefault();
         const delevered = {
             email: user.email,
-            inventory: inventoryDetails.name,
-            inventoriesId: inventoriesId,
+            inventory: delevery.name,
+            inventoriesId: inventoryId,
             address: event.target.address.value,
             phone: event.target.phone.value
         }
@@ -31,15 +38,15 @@ const InventoryDetails = () => {
 
     return (
         <div className='w-50 mx-auto'>
-            <h2>Hello inventory: {inventoryDetails.name}</h2>
             <form onSubmit={handleDelevered}>
                 <input className='w-100 mb-2' type="text" name='name' placeholder='name' required />
-                <input className='w-100 mb-2' type="email" value={user?.email} name='email' placeholder='email' readOnly disabled required />
-                <input className='w-100 mb-2' type="text" value={inventoryDetails.name} name='inventoryName' placeholder='inventoryName' readOnly disabled required />
+                <input className='w-100 mb-2' type="email" name='email' placeholder='email' value={user?.email} required />
+                <input className='w-100 mb-2' type="text" name='inventoryName' placeholder='inventoryName' value={delevery.name} required />
                 <input className='w-100 mb-2' type="text" name='address' placeholder='address' required />
                 <input className='w-100 mb-2' type="text" name='phone' placeholder='phone' required />
                 <input type="submit" value="Delevered" />
             </form>
+            <ToastContainer />
         </div>
     );
 };
