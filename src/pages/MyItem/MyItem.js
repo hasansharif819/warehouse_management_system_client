@@ -14,7 +14,7 @@ const MyItem = () => {
     const navigate = useNavigate();
 
     // useEffect( () => {
-    //     const url = `http://localhost:5000/inventory/${inventoryId}`
+    //     const url = `https://quiet-hamlet-98961.herokuapp.com/inventory/${inventoryId}`
     //     fetch(url)
     //     .then(res => res.json())
     //     .then(data => setMyItem(data))
@@ -23,7 +23,7 @@ const MyItem = () => {
     useEffect( () => {
         const getItems = async() => {
             const email = user.email;
-            const url = `http://localhost:5000/myitem?email=${email}`;
+            const url = `https://quiet-hamlet-98961.herokuapp.com/myitem?email=${email}`;
             const {data} = await axios.get(url)
             setItems(data);
             try{

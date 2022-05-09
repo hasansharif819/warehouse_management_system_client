@@ -11,7 +11,7 @@ import './Home.css';
 const Home = () => {
     const [inventories, setInventories] = useInventory();
     // useEffect( () => {
-    //     fetch('http://localhost:5000/products')
+    //     fetch('https://quiet-hamlet-98961.herokuapp.com/products')
     //     .then(res => res.json())
     //     .then(data => setProducts(data))
     // }, [])

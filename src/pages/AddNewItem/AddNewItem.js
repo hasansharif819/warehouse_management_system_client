@@ -7,7 +7,7 @@ const AddNewItem = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/inventory', {
+        fetch('https://quiet-hamlet-98961.herokuapp.com/inventory', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -11,7 +11,7 @@ const InventoryDetails = () => {
 
     const [delevery, setDelevery] = useState([]);
     useEffect( () => {
-        const url = `http://localhost:5000/inventory/${inventoryId}`;
+        const url = `https://quiet-hamlet-98961.herokuapp.com/inventory/${inventoryId}`;
         fetch(url)
         .then(res => res.json())
         .then(data => setDelevery(data))
@@ -26,7 +26,7 @@ const InventoryDetails = () => {
             address: event.target.address.value,
             phone: event.target.phone.value
         }
-        axios.post('http://localhost:5000/myitem', delevered)
+        axios.post('https://quiet-hamlet-98961.herokuapp.com/myitem', delevered)
         .then(response => {
             const {data} = response;
             if(data.insertedId){

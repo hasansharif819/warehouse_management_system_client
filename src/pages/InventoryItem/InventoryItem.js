@@ -9,7 +9,7 @@ const InventoryItem = () => {
     const { inventoryId } = useParams();
     const [product, setProduct] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/inventory/${inventoryId}`
+        const url = `https://quiet-hamlet-98961.herokuapp.com/inventory/${inventoryId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -24,7 +24,7 @@ const InventoryItem = () => {
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
             console.log('deleting user with id, ', id);
-            const url = `http://localhost:5000/inventory/${id}`;
+            const url = `https://quiet-hamlet-98961.herokuapp.com/inventory/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -60,7 +60,7 @@ const InventoryItem = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
-        const url = `http://localhost:5000/inventory/${inventoryId}`;
+        const url = `https://quiet-hamlet-98961.herokuapp.com/inventory/${inventoryId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
