@@ -1,9 +1,11 @@
 import React from 'react';
+import PageTitle from '../PageTitle/PageTitle';
 import './Footer.css';
 
 const Footer = () => {
     return (
         <div className='footerClass'>
+            <PageTitle title="Footer"></PageTitle>
             <div className="name">
                 <h2>Smart Zone</h2>
                 <p>Smartzone is a Warehouse system where anyone could be update or delete his inventory system and also modified.It is a simple Website that is not relevent with E-Commerce or any similar types</p>

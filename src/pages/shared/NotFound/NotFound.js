@@ -1,9 +1,11 @@
 import React from 'react';
 import notF from '../../../image/NotF.jpg';
+import PageTitle from '../PageTitle/PageTitle';
 
 const NotFound = () => {
     return (
         <div>
+            <PageTitle title="Page Not Found"></PageTitle>
             <h2>404</h2>
             <h2>Page Not Found</h2>
             <br />

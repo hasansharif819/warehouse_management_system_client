@@ -1,9 +1,10 @@
 import React from 'react';
+import PageTitle from '../PageTitle/PageTitle';
+import './About.css';
 
-const About = () => {
+const About = ({}) => {
     return (
         <div>
-            <h3>About</h3>
         </div>
     );
 };

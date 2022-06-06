@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useInventory from '../../hooks/useInventory';
 import ManageInventorySingle from '../ManageInventorySingle/ManageInventorySingle';
+import PageTitle from '../shared/PageTitle/PageTitle';
 
 const ManageInventory = () => {
     const [inventories, setInventories] = useInventory();
@@ -22,12 +23,13 @@ const ManageInventory = () => {
 
     return (
         <div>
+            <PageTitle title="Manage-inventory"></PageTitle>
             <h2>
                 <Link to='/addNewItem'>
                     <button className='btn btn-primary'>Add New Item</button>
                 </Link>
             </h2>
-            <div className='mobileGrid'>
+            <div className='row'>
                 {
                     inventories.map(inventory => <ManageInventorySingle
                         key={inventory._id}

@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Items from '../Items/Items';
+import PageTitle from '../shared/PageTitle/PageTitle';
 
 const MyItem = () => {
     // const {inventoryId} = useParams();
@@ -48,8 +49,9 @@ const MyItem = () => {
     
     return (
         <div>
+            <PageTitle title="My-item"></PageTitle>
             <h2>My Item: {items.length}</h2>
-            <div>
+            <div className='row'>
                 {
                     items.map(item => <Items
                         key={item._id}

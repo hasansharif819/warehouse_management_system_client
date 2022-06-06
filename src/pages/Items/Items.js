@@ -26,13 +26,13 @@ const Items = ({ item }) => {
     //-------------------Delete button end----------
 
     return (
-        <div className='mobile'>
+        <div className='col-sm-12 col-md-6 col-lg-4 mobile'>
             <div>
                 <h4>Name: {item.inventory}</h4>
                 <p>Email: {item.email}</p>
                 <p>Address: {item.address}</p>
                 <p>Phone: {item.phone}</p>
-                <p>{item._id}</p>
+                {/* <p>{item._id}</p> */}
             </div>
             <div>
                 <button onClick={() => handleUserDelete(item._id)} className='btn btn-danger'>Delete</button>

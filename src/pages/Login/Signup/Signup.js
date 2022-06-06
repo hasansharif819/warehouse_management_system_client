@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import PageTitle from '../../shared/PageTitle/PageTitle';
 import Loading from '../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Signup.css';
@@ -42,6 +43,7 @@ const Signup = () => {
 
     return (
         <div className='register'>
+            <PageTitle title="Sign-up"></PageTitle>
             <h2 style={{ textAlign: 'center' }}>Sign up</h2>
             <form onSubmit={handleRegister}>
                 <input type="text" name="name" id="" placeholder='Enter Your Name' />

@@ -6,6 +6,7 @@ import img1 from '../../../image/carousal/img1.jpg';
 import img2 from '../../../image/carousal/img2.jpg';
 import img3 from '../../../image/carousal/img3.jpg';
 import HomeInventory from '../HomeInventory/HomeInventory';
+import PageTitle from '../PageTitle/PageTitle';
 import './Home.css';
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
     // }, [])
     return (
         <div>
+            <PageTitle title="Home"></PageTitle>
             {/* carousal  */}
             <Carousel variant="dark">
                 <Carousel.Item>
@@ -51,13 +53,15 @@ const Home = () => {
                 </Carousel.Item>
             </Carousel>
             <h2 className='bg-primary my-5 py-3'>Inventory</h2>
-            <div className="mobileGrid">
+            <div className='container'>
+            <div className="row">
                 {
                     inventories.slice(0,6).map(inventory => <HomeInventory
                         key={inventory._id}
                         inventory = {inventory}
                     ></HomeInventory>)
                 }
+            </div>
             </div>
             <br />
             <Link to='/manageinventories'>

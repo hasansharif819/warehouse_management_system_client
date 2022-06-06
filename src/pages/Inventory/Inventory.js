@@ -10,7 +10,7 @@ const Inventory = ({ inventory }) => {
     }
 
     return (
-        <div className='mobile'>
+        <div className='col-sm-12 col-md-6 col-lg-4 mobile'>
             <img height={300} width={300} src={img} alt="" />
             <div>
                 <h4>{name}</h4>

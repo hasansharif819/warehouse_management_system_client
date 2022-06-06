@@ -5,12 +5,12 @@ import './HomeInventory.css';
 const HomeInventory = ({inventory}) => {
     const {img, name, price} = inventory;
     return (
-        <div>
-        <div className='mobile-home'>
+        <div className='col-sm-12 col-md-6 col-lg-4 mobile-home g-3 mx-auto'>
+        {/* <div> */}
             <img width={300} height={300} src={img} alt="" />
             <h4>{name}</h4>
             <p>Price: {price}</p>
-        </div>
+        {/* </div> */}
         </div>
     );
 };
